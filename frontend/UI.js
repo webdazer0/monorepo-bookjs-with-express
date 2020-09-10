@@ -14,7 +14,7 @@ class UI {
                 <div class="card card-body mx-4 mb-4">
                     <div class="row mb-4">
                         <div class="col-md-4">
-                            <img src="http://localhost:4000${book.imagePath}" alt="${book.title}" class="img-fluid" />
+                            <img src="${book.imagePath}" alt="${book.title}" class="img-fluid" />
                         </div>
                         <div class="col-md-8">
                             <h4 class="card-title">${book.title}</h4>
