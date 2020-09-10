@@ -1,4 +1,6 @@
 import BookService from './services/BookService';
+import { format } from 'timeago.js';
+require('./addLang'); // Aggiunge lingue: Italiano & Spagnolo
 const newBook = new BookService();
 
 class UI {
@@ -23,7 +25,7 @@ class UI {
                         </div>
                     </div>
                     <div class="card-footer">
-                        ${book.created_at}
+                        ${format(book.created_at, 'it')}
                     </div>
                 </div>
             `;
