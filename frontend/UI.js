@@ -58,7 +58,7 @@ class UI {
     div.className = `alert alert-${color} message`;
     div.appendChild(document.createTextNode(message));
 
-    const container = document.querySelector(".col-md-4");
+    const container = document.querySelector(".col-md-5");
     const bookForm = document.querySelector("#book-form");
     container.insertBefore(div, bookForm);
 
