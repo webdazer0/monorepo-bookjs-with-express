@@ -4,6 +4,17 @@ const cloudinary = require("../services/cdn");
 
 const Book = require("../models/Book");
 
+// const eager_options = {
+//   width: 240,
+//   height: 150,
+//   crop: "scale",
+//   format: "jpg",
+// };
+const eager_options = {
+  width: 240,
+  crop: "scale",
+  format: "jpg",
+};
 const bookCtrl = {};
 
 bookCtrl.getBooks = async (req, res) => {
@@ -17,6 +28,7 @@ bookCtrl.addBook = async (req, res) => {
     // console.log(req.file);
     const result = await cloudinary.v2.uploader.upload(req.file.path, {
       upload_preset: "book_app",
+      eager: eager_options,
     });
     console.log(result);
     const newBook = new Book({
@@ -24,6 +36,7 @@ bookCtrl.addBook = async (req, res) => {
       author,
       isbn,
       imagePath: result.secure_url,
+      imageThumb: result.eager[0].secure_url,
       public_id: result.public_id,
     });
     await newBook.save();

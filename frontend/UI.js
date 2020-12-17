@@ -13,9 +13,9 @@ class UI {
       div.className = "col-lg-12";
       div.innerHTML = `
                 <div class="card card-body mx-0  mb-4">
-                    <div class="row mb-4">
-                        <div class="col-md-4 mb-5 mb-sm-0">
-                            <img src="${book.imagePath}" title="${
+                    <div class="row mb-4 text-center text-md-left">
+                        <div class="col-md-4 px-5 px-md-3 mb-3 mb-sm-0">
+                            <img src="${book.imageThumb}" title="${
         book.title
       }" alt="${book.title}" class="img-fluid" />
                         </div>
@@ -28,6 +28,11 @@ class UI {
                               book._id
                             }">
                             Delete
+                            </a>
+                            <a href="${
+                              book.imagePath
+                            }" target="_blank" class="btn btn-primary" title="View image in High Quality">
+                            View HQ
                             </a>
                         </div>
                     </div>

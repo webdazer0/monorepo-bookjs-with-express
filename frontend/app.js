@@ -27,11 +27,11 @@ document.getElementById("book-form").addEventListener("submit", async (e) => {
 
 document.getElementById("books-cards").addEventListener("click", async (e) => {
   if (e.target.classList.contains("delete")) {
+    e.preventDefault();
     // console.log(e.target.getAttribute('_id'));
     const id = e.target.getAttribute("_id");
     const ui = new UI();
     await ui.deleteBook(id);
     ui.successMessage("❌ Book Deleted!", "danger", 3000);
   }
-  e.preventDefault();
 });

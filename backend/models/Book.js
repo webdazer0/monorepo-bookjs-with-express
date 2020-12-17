@@ -5,6 +5,7 @@ const BookSchema = new Schema({
   author: { type: String, required: true },
   isbn: { type: String, required: true },
   imagePath: { type: String, required: true },
+  imageThumb: { type: String, required: false },
   public_id: { type: String, required: true },
   created_at: { type: Date, default: Date.now },
 });
