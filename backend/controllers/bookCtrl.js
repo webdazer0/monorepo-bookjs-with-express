@@ -4,12 +4,6 @@ const cloudinary = require("../services/cdn");
 
 const Book = require("../models/Book");
 
-// const eager_options = {
-//   width: 240,
-//   height: 150,
-//   crop: "scale",
-//   format: "jpg",
-// };
 const eager_options = {
   width: 240,
   crop: "scale",
