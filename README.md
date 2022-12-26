@@ -2,7 +2,7 @@
 
 Monorepo BookJs
 
-**Demo: https://cloudinaryjs.up.railway.app/**
+**Demo:** https://bookjs.up.railway.app/ 
 
 ![](https://github.com/webdazer0/monorepo-bookjs-with-express/blob/master/screenshot.jpg)
 
@@ -52,4 +52,4 @@ npm run dev
 
 Go to http://localhost:3000/ to ensure that it is running.
 
-Demo: https://cloudinaryjs.up.railway.app/
+Demo: https://bookjs.up.railway.app/
