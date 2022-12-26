@@ -9,9 +9,17 @@
     "dev": "cross-env NODE_ENV=development nodemon backend/index.js --ignore frontend",
     "start:webpack": "webpack-dev-server"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/webdazer0/monorepo-bookjs-with-express.git"
+  },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/webdazer0/monorepo-bookjs-with-express/issues"
+  },
+  "homepage": "https://github.com/webdazer0/monorepo-bookjs-with-express#readme",
   "dependencies": {
     "cloudinary": "1.33.0",
     "cors": "2.8.5",
@@ -34,4 +42,6 @@
     "webpack-cli": "^5.0.1",
     "webpack-dev-server": "^4.11.1"
   }
+
+
 }
