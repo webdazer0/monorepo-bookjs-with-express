@@ -1,7 +1,5 @@
 const { unlink } = require("fs-extra");
-const path = require("path");
 const cloudinary = require("../services/cdn");
-
 const Book = require("../models/Book");
 
 const eager_options = {
@@ -9,11 +7,17 @@ const eager_options = {
   crop: "scale",
   format: "jpg",
 };
+
 const bookCtrl = {};
 
 bookCtrl.getBooks = async (req, res) => {
-  const books = await Book.find();
-  res.json(books);
+  try {
+    const books = await Book.find();
+    res.json(books);
+  } catch (error) {
+    console.log(error);
+    res.json({ message: error.message });
+  }
 };
 
 bookCtrl.addBook = async (req, res) => {
@@ -37,16 +41,21 @@ bookCtrl.addBook = async (req, res) => {
     await unlink(req.file.path);
     res.json({ message: "Book Saved" });
   } catch (error) {
-    console.log(error.message);
-    res.json({ message: "Something went wrong" });
+    console.log(error);
+    res.json({ message: error.message });
   }
 };
 
 bookCtrl.deleteBook = async (req, res) => {
-  const book = await Book.findByIdAndDelete(req.params.id);
-  const result = await cloudinary.v2.uploader.destroy(book.public_id);
-  console.log(result);
-  res.json({ message: "Book Deleted" });
+  try {
+    const book = await Book.findByIdAndDelete(req.params.id);
+    const result = await cloudinary.v2.uploader.destroy(book.public_id);
+    console.log(result);
+    res.json({ message: "Book Deleted" });
+  } catch (error) {
+    console.log(error);
+    res.json({ message: error.message });
+  }
 };
 
 module.exports = bookCtrl;

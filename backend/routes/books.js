@@ -1,23 +1,10 @@
 const { Router } = require("express");
 const router = Router();
-const { unlink } = require("fs-extra");
-const path = require("path");
 
-const { getBooks, addBook, deleteBook } = require("../controllers/bookCtrl");
-const Book = require("../models/Book");
+const bookController = require("../controllers/bookCtrl");
 
-const cloudinary = require("cloudinary");
+router.route("/").get(bookController.getBooks).post(bookController.addBook);
 
-cloudinary.config({
-  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
-  api_key: process.env.CLOUDINARY_API_KEY,
-  api_secret: process.env.CLOUDINARY_API_SECRET,
-});
-
-router.get("/", getBooks);
-
-router.post("/", addBook);
-
-router.delete("/:id", deleteBook);
+router.route("/:id").delete(bookController.deleteBook);
 
 module.exports = router;
