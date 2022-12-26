@@ -1,7 +1,7 @@
 const { Router } = require("express");
 const router = Router();
 
-const bookController = require("../controllers/bookCtrl");
+const bookController = require("../controllers/book.controller");
 
 router.route("/").get(bookController.getBooks).post(bookController.addBook);
 

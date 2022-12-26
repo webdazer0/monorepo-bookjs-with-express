@@ -3,6 +3,7 @@ const morgan = require("morgan");
 const multer = require("multer");
 const path = require("path");
 const cors = require("cors");
+const bookRoutes = require("./routes/book.routes");
 
 //Init
 const app = express();
@@ -25,7 +26,7 @@ app.use(express.json());
 app.use(cors());
 
 //Routes
-app.use("/api/books", require("./routes/books"));
+app.use("/api/books", bookRoutes);
 
 //Static Files
 app.use(express.static(path.join(__dirname, "public")));
