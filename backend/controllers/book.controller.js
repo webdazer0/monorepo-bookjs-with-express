@@ -12,7 +12,8 @@ const bookCtrl = {};
 
 bookCtrl.getBooks = async (req, res) => {
   try {
-    const books = await Book.find();
+    const books = await Book.find().sort({ created_at: "asc" });
+    // const books = await Book.update({}, {$unset: {__v: 1 }} , {multi: true});
     res.json(books);
   } catch (error) {
     console.log(error);
