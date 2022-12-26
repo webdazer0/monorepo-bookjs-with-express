@@ -2,16 +2,13 @@
 
 Monorepo BookJs
 
+![](https://github.com/webdazer0/monorepo-bookjs-with-express/blob/master/screenshot.png)
 **Demo:** https://bookjs.up.railway.app/ 
 
-![](https://github.com/webdazer0/monorepo-bookjs-with-express/blob/master/screenshot.jpg)
-
-
-
 ## Backend
-- Express
-- Cloudinary
-- Mongoose (MongoDB object modeling)
+- `Express`
+- `Cloudinary`
+- `Mongoose` (MongoDB object modeling)
 
 ## Frontend
 - `Vanilla Javascript`
