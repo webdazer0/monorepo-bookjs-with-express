@@ -1,4 +1,4 @@
 const setup = {
-  API_URI: "http://localhost:3000/api/books",
+  API_URI: "/api/books",
 };
 export default setup;
